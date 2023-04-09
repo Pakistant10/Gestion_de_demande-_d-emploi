@@ -6,10 +6,10 @@ Voir les Candidatures
                    <!-- start content -->
                    <div class="content-wrapper">
                     <section class="content-header">
-                        <h1>Applicants</h1>
+                        <h1>Candidats</h1>
                         <ol class="breadcrumb">
-                            <li><a href="dashboard.html"><i class="fa fa-dashboard"></i> Home</a></li>
-                            <li class=><a href="dashboard.html">Applicants</a></li><li class="active">view</li>      
+                            <li><a href="dashboard.html"><i class="fa fa-dashboard"></i> Maison</a></li>
+                            <li class=><a href="dashboard.html">Candidats</a></li><li class="active">voir</li>      
                         </ol>
                     </section>
             
@@ -63,41 +63,41 @@ Voir les Candidatures
                                         <form action="{{url('/admin/sendfeedback')}}" method="POST">
                                             @csrf
                                             {{-- <input type="hidden" name="_token" value="DqmT9A5GdcuqqLQFE2cJcsc4Rsh0gP5TtDP5zwMj"> --}}
-                                            <div class="col-sm-12 content-header">View Details</div>
+                                            <div class="col-sm-12 content-header">Voir les détails</div>
                                             
                                             <div class="col-sm-6 content-body" > 
-                                                <p>Job Details</p> 
+                                                <p>JDétails du poste</p> 
                                                 <h3>{{$vacancy->occuptitle}}.</h3>
                                                 <input type="hidden" name="JOBREGID" value="3">
                                                 <input type="hidden" name="APPLICANTID" value="2022016">
                         
                                                 <div class="col-sm-6">
                                                     <ul>
-                                                        <li><i class="fp-ht-bed"></i>Required No. of Employee's :{{$vacancy->numofemp}}</li>
-                                                        <li><i class="fp-ht-food"></i>Salary : {{$vacancy->salary}}</li>
-                                                        <li><i class="fa fa-sun-"></i>Duration of Employment : {{$vacancy->duration}}</li>
+                                                        <li><i class="fp-ht-bed"></i>Nombre d'employés requis  :{{$vacancy->numofemp}}</li>
+                                                        <li><i class="fp-ht-food"></i>Salaire : {{$vacancy->salary}}</li>
+                                                        <li><i class="fa fa-sun-"></i>Durée de l'emploi : {{$vacancy->duration}}</li>
                                                     </ul>
                                                 </div> 
                         
                                                 <div class="col-sm-6">
                                                     <ul> 
-                                                        <li><i class="fp-ht-tv"></i>Prefered Sex : {{$vacancy->prefsex}}</li>
-                                                        <li><i class="fp-ht-computer"></i>Sector of Vacancy : {{$vacancy->sector}}.</li>
+                                                        <li><i class="fp-ht-tv"></i>Sexe préféré : {{$vacancy->prefsex}}</li>
+                                                        <li><i class="fp-ht-computer"></i>Secteur: {{$vacancy->sector}}.</li>
                                                     </ul>
                                                 </div>
                         
                                                 <div class="col-sm-12">
-                                                    <p>Job Description : </p>   
+                                                    <p>Description de l'emploi :</p>   
                                                     <p style="margin-left: 15px;">{{$vacancy->description}}.</p>
                                                 </div>
                         
                                                 <div class="col-sm-12"> 
-                                                    <p>Qualification/Work Experience : </p>
+                                                    <p>Diplôme/Expérience Professionnelle : </p>
                                                     <p style="margin-left: 15px;">{{$vacancy->experience}}.</p>
                                                 </div>
                         
                                                 <div class="col-sm-12"> 
-                                                    <p>Employeer : </p>
+                                                    <p>Employé  : </p>
                                                     <p style="margin-left: 15px;">{{$vacancy->companyname}}</p> 
                                                     
                                                 </div>
@@ -105,39 +105,39 @@ Voir les Candidatures
                                             </div>
                     
                                             <div class="col-sm-6 content-body" >
-                                                <p>Applicant Infomation</p> 
+                                                <p>Informations sur le candidat</p> 
                                                 <h3> {{$client->firstname}} {{$client->lastname}}
                                                 </h3>
                                                 <ul> 
                                                     <li>Adresse : {{$client->address}}</li>
                                                     <li>Contact : {{$client->phone}}</li>
                                                     <li>Email  : {{$client->email}}</li>
-                                                    <li>Sex: {{$client->gender}}</li>
+                                                    <li>Sexe: {{$client->gender}}</li>
                                                     <li>Age : {{$client->dateofbirth}}</li> 
                                                 </ul>
             
                                                 <div class="col-sm-12"> 
-                                                    <p>Educational Attainment : </p>
+                                                    <p>Niveau de scolarité : </p>
                                                     <p style="margin-left: 15px;">{{$client->degree}}</p>
                                                 </div>
                                             </div>
                                         
                                             <div class="col-sm-12 content-footer">
                                                 
-                                                <p><i class="fa fa-paperclip"></i>  Attachment Files</p>
+                                                <p><i class="fa fa-paperclip"></i>  Fichiers joints</p>
                                                 
                                                 <div class="col-sm-12 slider">
-                                                    <h3>Download Resume <a href="/storage/resumes/{{$resume}}" target="_blank">Here</a></h3>
+                                                    <h3>Télécharger le CV ici <a href="/storage/resumes/{{$resume}}" target="_blank">ici </a></h3>
                                                 </div> 
                         
                                                 <div class="col-sm-12">
-                                                    <p>Feedback</p>
+                                                    <p>Message</p>
                                                     <textarea class="input-group" name="feedback" required>{{$applicant->status != "Attent"? $applicant->status: ''}}</textarea>
-                                                    <input type="hidden" name="id" value="{{$applicant->id}}">
+                                                    <input type="hidden" name="id" placeholder="entre le message" value="{{$applicant->id}}">
                                                 </div>
             
                                                 <div class="col-sm-12  submitbutton "> 
-                                                    <button type="submit" name="submit" class="btn btn-primary">Send</button>
+                                                    <button type="submit" name="submit" class="btn btn-primary">Envoyer</button>
                                                 </div> 
                                             </div>
             

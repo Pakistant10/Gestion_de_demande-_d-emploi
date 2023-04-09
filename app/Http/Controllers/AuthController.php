@@ -27,6 +27,7 @@ class AuthController extends Controller
         $admin = usersAdmin::where('username', $request->username)->where('password', $request->password)->first();
         if($admin){
             Session::put("admin", $admin);
+            
 
             return redirect('/admin/dashboard');
         }

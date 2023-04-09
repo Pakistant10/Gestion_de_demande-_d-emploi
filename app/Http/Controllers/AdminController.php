@@ -22,8 +22,7 @@ class AdminController extends Controller
         $company = company::count();
         $vacancy = vacancy::count();
         $applicant = applicant::count();
-        $usersAdmin=Session('usersAdmin');
-    return view('Admin.dashboard', compact('company'),compact('vacancy'),compact('applicant'))->with('usersAdmin',$usersAdmin);
+    return view('Admin.dashboard', compact('company'),compact('vacancy'),compact('applicant'));
        
     }
     public function company(){

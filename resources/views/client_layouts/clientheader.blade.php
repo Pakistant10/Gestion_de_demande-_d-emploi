@@ -13,12 +13,12 @@
                             
                         <a title="View Profile" href="{{url('profile')}}"> <i class="fa fa-user"></i>  {{Session::get("client")->firstname}} {{Session::get("client")->lastname}} </a> | 
                             
-                        <a href="{{url('/logout')}}">  <i class="fa fa-sign-out"> </i>Logout</a>       
+                        <a href="{{url('/logout')}}">  <i class="fa fa-sign-out"> </i>Se deconnecte</a>       
                     </p>
                         
                     @else
                                            <p   class="pull-right login">
-                            <a data-target="#myModal" data-toggle="modal" href=""> <i class="fa fa-lock"></i> Login </a>
+                            <a data-target="#myModal" data-toggle="modal" href=""> <i class="fa fa-lock"></i> Connexion </a>
                         </p> 
                     @endif
 

@@ -29,8 +29,10 @@ class ClientController extends Controller
         return view('client.jobfunction');
     }
     public function jobtitle(){
-        return view('client.jobtitle');
+        $titreemploi=Category::where('Category','LIKE','%id%')->get();
+        return view('client.jobtitle')->with('TitreEmploi',$titreemploi);
     }
+
     public function jobcategorie($name){
         $vacanies=vacancy::where("Category", $name)->get();
         return view('client.jobcategorie')->with("vacancies",$vacanies)->with("name",$name);
@@ -78,12 +80,14 @@ class ClientController extends Controller
     }
     public function message(){
         $applicants= applicant::where("clientid", Session::get("client")->id)->get();
+        $fileNameToStore = Storage::url('profiles/'.Session::get('client')['image']);
         
-        return view('client.message')->with("applicants",$applicants);
+        return view('client.message', compact('fileNameToStore'))->with("applicants",$applicants);
     }
     public function readmessage(){
         $applicants= applicant::where("clientid", Session::get("client")->id)->get();
-        return view('client.readmessage')->with("applicants",$applicants);
+        $fileNameToStore = Storage::url('profiles/'.Session::get('client')['image']);
+        return view('client.readmessage', compact('fileNameToStore'))->with("applicants",$applicants);
     }
     public function jobapplied(){
         return view('client.jobapplied');
@@ -113,28 +117,28 @@ class ClientController extends Controller
 
           
     }
-    public function logout(){
-        Session::forget("client");
-        return redirect("/");
-    }
-    public function login(Request $request)
-{
-    $clients = Client::get();
-    foreach ($clients as $client) {
-        if ($client->username == $request->username && $client->password == $request->password) {
-            // Les identifiants de connexion sont valides
-            // Vous pouvez ici créer une session pour l'utilisateur
-            Session::put("client", $client);
+//     public function logout(){
+//         Session::forget("client");
+//         return redirect("/");
+//     }
+//     public function login(Request $request)
+// {
+//     $clients = Client::get();
+//     foreach ($clients as $client) {
+//         if ($client->username == $request->username && $client->password == $request->password) {
+//             // Les identifiants de connexion sont valides
+//             // Vous pouvez ici créer une session pour l'utilisateur
+//             Session::put("client", $client);
 
-            // Rediriger l'utilisateur vers une autre page
-            return redirect('/');
-        }
-    }
+//             // Rediriger l'utilisateur vers une autre page
+//             return redirect('/');
+//         }
+//     }
 
-    // Si les identifiants de connexion ne sont pas valides,
-    // rediriger l'utilisateur vers une page d'erreur ou une page de connexion
-    return redirect('/')->withErrors(['error' => 'Les identifiants de connexion sont invalides.']);
-}
+//     // Si les identifiants de connexion ne sont pas valides,
+//     // rediriger l'utilisateur vers une page d'erreur ou une page de connexion
+//     return redirect('/')->withErrors(['error' => 'Les identifiants de connexion sont invalides.']);
+// }
   
     public function submit(Request $request){
 

@@ -26,7 +26,7 @@ Profile Message
 
         <div class="panel-body"> 
           <div  id="image-container">
-        <img title="profile image"  data-target="#myModal1"  data-toggle="modal"  src="{{asset('plugins/home-plugins/img/team1.jpg')}}" style="border-radius : 50% ">  
+        <img title="profile image"  data-target="#myModal1"  data-toggle="modal"  src="{{ url(  $fileNameToStore) }}" style="border-radius : 50% ">  
           </div>
         </div>
 

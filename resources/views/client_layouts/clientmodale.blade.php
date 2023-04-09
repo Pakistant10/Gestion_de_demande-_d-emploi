@@ -4,7 +4,7 @@
             <div class="modal-header">
                 <button class="close" data-dismiss="modal" type=
                 "button">×</button>
-                <h4 class="modal-title" id="myModalLabel">Login</h4>
+                <h4 class="modal-title" id="myModalLabel">Connexion</h4>
             </div>
 
             <div class="modal-body hold-transition login-page">
@@ -15,18 +15,18 @@
                         @csrf
                         {{-- <input type="hidden" name="_token" value="ZJLPQIkfMJhoPRGwoueM8KtNelvHt69vXLhsfjjO"> --}}
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Username" name="username" required id="user_email">
+                            <input type="text" class="form-control" placeholder="Nom d'utilisateur" name="username" required id="user_email">
                             <span class="fa fa-user form-control-feedback" style="margin-top: -22px;"></span>
                         </div>
                         <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Password" name="password" required id="user_pass">
+                            <input type="password" class="form-control" placeholder="Mot de Passer" name="password" required id="user_pass">
                             <span class="fa fa-lock form-control-feedback" style="margin-top: -22px;"></span>
                         </div>
                         <div class="row">
                             <div class="col-xs-8">
                                 <div class="checkbox icheck">
                                 <label>
-                                    <input type="checkbox"> Remember Me
+                                    <input type="checkbox"> Souviens-toi de moi
                                 </label>
                                 </div>
                             </div>
@@ -37,16 +37,16 @@
                         <!-- /.col -->
                         </div>
                     
-                    <a href="#">I forgot my password</a><br>
-                    <a href="{{url('/register')}}" class="text-center">Register a new membership</a>
+                    <a href="#">J'ai oublié mon mot de passe</a><br>
+                    <a href="{{url('/register')}}" class="text-center">Créer un nouvel abonnement</a>
                     </div>
                     <!-- /.login-box-body -->
                 </div>
             </div>
 
             <div class="modal-footer">
-                <button class="btn btn-default" data-dismiss="modal">Close</button> <button class="btn btn-primary"
-                name="btnlogin" type="submit" id="btnlogin"  >Login</button>
+                <button class="btn btn-default" data-dismiss="modal">Ferme</button> <button class="btn btn-primary"
+                name="btnlogin" type="submit" id="btnlogin"  >Connexion</button>
             </div>
         </form>
         </div><!-- /.modal-content -->

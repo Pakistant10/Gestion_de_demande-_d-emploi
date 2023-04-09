@@ -52,13 +52,15 @@ jod by title
     }
 </style>
 
-<form action="" method="POST"> 
+<form action="/jobdetails" method="POST" > 
+    @csrf
     <section id="content">
     <div class="container">
         <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <h2>Search field</h2>
+            
             <div id="custom-search-input">
             <div class="input-group col-md-12">
                 <input type="text" name="SEARCH" class="form-control input-lg" placeholder="Search By Job Title" />

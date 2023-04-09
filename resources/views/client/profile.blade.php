@@ -22,13 +22,13 @@ Profile
         <div class="panel panel-default">            
           <div class="panel-body"> 
             <div  id="image-container">
-              <img title="profile image"  data-target="#myModal1"  data-toggle="modal"  src="{{ url($fileNameToStore) }}" alt="Image" style="border-radius : 50% "> 
+              <img title="profile image"  data-target="#myModal1"  data-toggle="modal"  src="{{ url(  $fileNameToStore) }}" alt="Image" style="border-radius : 50% "> 
             </div>
           </div>
 
           <ul class="list-group">
             <li class="list-group-item text-muted">Profile</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Real Name</strong></span> 
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Nom:</strong></span> 
             {{Session::get("client")->lastname." ".Session::get("client")->middlename}}
             </li>
           </ul> 
@@ -36,9 +36,9 @@ Profile
           <div class="box box-solid">  
             <div class="box-body no-padding">
               <ul class="nav nav-pills nav-stacked"> 
-                <li class="active"><a href=""><i class="fa fa-list"></i> Applied Jobs
+                <li class="active"><a href=""><i class="fa fa-list"></i> Emplois 
                   </a></li>
-                  <li class=""><a href=""><i class="fa fa-user"></i> Accounts </a></li>
+                  <li class=""><a href=""><i class="fa fa-user"></i> Compte</a></li>
                 <li class=""><a href="/profile/message"><i class="fa fa-envelope-o"></i> Messages
                   <span class="label label-success pull-right">1</span></a></li> 
               </ul>
@@ -70,9 +70,9 @@ Profile
                       <table id="dash-table" class="table table-hover table-striped">
                         <thead> 
                           <tr>
-                            <th>Job Title</th>
-                            <th>Company</th>
-                            <th>Location</th>
+                            <th>Titre d'emploi</th>
+                            <th>Entreprise</th>
+                            <th>Lieu</th>
                             <th>Status</th>
                           </tr>
                         </thead>
@@ -116,7 +116,7 @@ Profile
       <div class="modal-content">
         <div class="modal-header">
           <button class="close" data-dismiss="modal" type="button">×</button>
-          <h4 class="modal-title" id="myModalLabel">Choose Image.</h4>
+          <h4 class="modal-title" id="myModalLabel">Choisir une image.</h4>
         </div>
 
         <form action="{{url('profile/uploadimage')}} " method="post" enctype="multipart/form-data">
@@ -138,9 +138,9 @@ Profile
           </div>
 
           <div class="modal-footer">
-            <button class="btn btn-default" data-dismiss="modal" type="button">Close</button> 
+            <button class="btn btn-default" data-dismiss="modal" type="button">Ferme</button> 
             <button  class="btn btn-primary"
-              name="savephoto" type="submit">Upload Photo</button>
+              name="savephoto" type="submit">Mettre a jour la Photo</button>
           </div>
 
         </form>

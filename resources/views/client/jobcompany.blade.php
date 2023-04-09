@@ -15,6 +15,7 @@ Job Company
 </section> 
 
 <form action="" method="POST"> 
+    {{ csrf_field() }}
     <section id="content">
         <div class="container content">
             <div class="col-sm-2"></div>

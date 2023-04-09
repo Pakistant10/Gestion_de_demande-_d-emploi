@@ -24,7 +24,7 @@ Message
                 <div class="panel panel-default">            
                   <div class="panel-body"> 
                     <div  id="image-container">
-                      <img title="profile image"  data-target="#myModal1"  data-toggle="modal"  src="{{asset('plugins/home-plugins/img/noimage.jpg')}}" style="border-radius : 50% ">  
+                      <img title="profile image"  data-target="#myModal1"  data-toggle="modal"  src="" style="border-radius : 50% ">  
                     </div>
                   </div>
 
@@ -93,8 +93,8 @@ Message
                             <div class="table-responsive mailbox-messages">
                               <table class="table table-hover table-striped">
                                 <tbody>
-                                  @foreach ($applicants as $applicants)
-                                  <tr><td><input type="checkbox"></td><td class="mailbox-name"><a href="/profile/readmessage/{{$applicants->id}}">{{$applicants->company}}</a></td><td class="mailbox-subject">Thanks for your application. You will receive an at the end of this week for the interview.</td><td class="mailbox-date">2022-05-16 16:49:09</td></tr> 
+                                  @foreach ($applicants as $applicant)
+                                  <tr><td><input type="checkbox"></td><td class="mailbox-name"><a href="/profile/readmessage/{{$applicant->id}}">{{$applicant->company}}</a></td><td class="mailbox-subject">Thanks for your application. You will receive an at the end of this week for the interview.</td><td class="mailbox-date">2022-05-16 16:49:09</td></tr> 
                                   @endforeach
                                 </tbody>
                               </table>
